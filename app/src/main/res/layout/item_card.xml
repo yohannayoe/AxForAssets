@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/itemView"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:src="@drawable/first" />
+
+    <TextView
+        android:id="@+id/itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:text="Item Name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:text="DETAIL"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_gravity="center|end"
+        android:stateListAnimator="@animator/lift_on_touch"
+        android:layout_marginRight="55dp"
+        android:layout_marginBottom="10dp"/>
+
+
+</FrameLayout>
