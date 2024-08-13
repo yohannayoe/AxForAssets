@@ -103,8 +103,8 @@ public class HomeActivity extends AppCompatActivity {
         if(tabNumber == 1){
             selectedTextView = tabTerm;
             nonSelectedTextView1 = tabCondition;
-            selectedTextView.setText("Term");
-            nonSelectedTextView1.setText("Condition");
+            selectedTextView.setText("Terms");
+            nonSelectedTextView1.setText("Conditions");
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
                     .replace(R.id.fragmentContainer, FragmentOne.class, null)
@@ -112,8 +112,8 @@ public class HomeActivity extends AppCompatActivity {
         } else if(tabNumber == 2){
             selectedTextView = tabCondition;
             nonSelectedTextView1 = tabTerm;
-            selectedTextView.setText("Condition");
-            nonSelectedTextView1.setText("Term");
+            selectedTextView.setText("Conditions");
+            nonSelectedTextView1.setText("Terms");
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
                     .replace(R.id.fragmentContainer, FragmentTwo.class, null)
