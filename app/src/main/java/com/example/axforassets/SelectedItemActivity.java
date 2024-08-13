@@ -92,7 +92,7 @@ public class SelectedItemActivity extends AppCompatActivity {
                                     .setMessage("Transaction Success")
                                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int which) {
-                                            Intent intent = new Intent(SelectedItemActivity.this, FirstFragment.class);
+                                            Intent intent = new Intent(SelectedItemActivity.this, ItemListActivity.class);
                                             startActivity(intent);
                                         }
                                     })
