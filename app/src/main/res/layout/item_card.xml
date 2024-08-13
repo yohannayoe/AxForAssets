@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/itemView"
@@ -24,18 +25,21 @@
 
         />
 
+
     <Button
+        android:id="@+id/btnSelect"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:background="@drawable/rounded_button"
-        android:gravity="center"
-        android:text="DETAIL"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         android:layout_gravity="center|end"
-        android:stateListAnimator="@animator/lift_on_touch"
         android:layout_marginRight="55dp"
-        android:layout_marginBottom="10dp"/>
-
+        android:layout_marginBottom="10dp"
+        android:stateListAnimator="@animator/lift_on_touch"
+        android:background="@drawable/buttonpurchase"
+        android:text="Detail"
+        app:backgroundTint="@null"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        />
 
 </FrameLayout>

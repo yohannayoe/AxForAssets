@@ -1,6 +1,5 @@
 package com.example.axforassets;
 
-import android.content.ClipData;
 import android.content.Context;
 //import android.media.RouteListingPreference;
 import android.view.LayoutInflater;
@@ -9,26 +8,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.axforassets.R;
-import com.example.axforassets.SelectedItem;
-
-import java.util.List;
+import java.util.ArrayList;
 
 public class SelectedItemAdapter extends RecyclerView.Adapter<SelectedItemAdapter.ItemViewHolder> {
 
-    private List<SelectedItem> itemList;
-
-
+    private ArrayList<Item> itemList;
     private Context context;
 
-    public SelectedItemAdapter(List<SelectedItem> itemList, Context context) {
+    public SelectedItemAdapter(ArrayList<Item> itemList, Context context) {
         this.context = context;
         this.itemList = itemList;
     }
+
 
     @NonNull
     @Override
@@ -57,9 +50,13 @@ public class SelectedItemAdapter extends RecyclerView.Adapter<SelectedItemAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        SelectedItem item = itemList.get(position);
-        holder.ivItemIcon.setImageResource(item.getRouteId());
-        holder.tvItemName.setText(item.getName());
+        Item item = itemList.get(position);
+        holder.ivItemIcon.setImageResource(item.getImageResource());
+        holder.tvItemName.setText(item.getItemName());
+        // Scale the image
+        holder.ivItemIcon.setScaleX(2f); // scale in X direction
+        holder.ivItemIcon.setScaleY(2f); // scale in Y direction
+
 
         RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
         layoutParams.width = RecyclerView.LayoutParams.WRAP_CONTENT;

@@ -15,14 +15,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.collection.ArraySet;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SelectedItemActivity extends AppCompatActivity {
 
@@ -33,26 +29,42 @@ public class SelectedItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.selecteditem);
+        setContentView(R.layout.selecteditem_activity);
+        // Retrieve the passed details from the Intent
+        String itemName = getIntent().getStringExtra("itemName");
+        String itemPrice = getIntent().getStringExtra("itemPrice");
+        String itemDescription = getIntent().getStringExtra("itemDescription");
+
+        // Find the TextViews in the layout
+        TextView nameTextView = findViewById(R.id.PreviewItemTitle);
+        TextView priceTextView = findViewById(R.id.PreviewItemPrice);
+        TextView descriptionTextView = findViewById(R.id.PreviewItemDesc);
+
+        // Set the TextViews to display the item's details
+        nameTextView.setText(itemName);
+        priceTextView.setText(itemPrice);
+        descriptionTextView.setText(itemDescription);
 
         rvItemList = findViewById(R.id.rvItemList);
 
         // Set layout manager for RecyclerView
         rvItemList.setLayoutManager(new GridLayoutManager(this,3));
 
-        // Initialize item list
-        List<SelectedItem> itemList = new ArrayList<>();
-        itemList.add(new SelectedItem("難しい", R.drawable.ic_launcher_background));
-        itemList.add(new SelectedItem("未来", R.drawable.ic_launcher_background));
-        itemList.add(new SelectedItem("東京", R.drawable.ic_launcher_background));
-        itemList.add(new SelectedItem("不知火", R.drawable.ic_launcher_background));
-        itemList.add(new SelectedItem("真冬", R.drawable.ic_launcher_background));
-        itemList.add(new SelectedItem("影人", R.drawable.ic_launcher_background));
+        // Retrieve the passed ArrayList of variations from the Intent
+        ArrayList<Item> itemVariations = getIntent().getParcelableArrayListExtra("itemVariations");
 
+        // Set the image of the first item in the list as the preview image
+        ImageView previewImage = findViewById(R.id.PreviewItem);
+        if (itemVariations != null && !itemVariations.isEmpty()) {
+            previewImage.setImageResource(itemVariations.get(0).getImageResource());
+            previewImage.setScaleX(2f); // scale in X direction
+            previewImage.setScaleY(2f); // scale in Y direction
+        }
 
         // Set adapter
-        itemAdapter = new SelectedItemAdapter(itemList,this);
+        itemAdapter = new SelectedItemAdapter(itemVariations, this);
         rvItemList.setAdapter(itemAdapter);
+
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button buyItemsButton = findViewById(R.id.BuyItems);
         buyItemsButton.setOnClickListener(new View.OnClickListener() {
