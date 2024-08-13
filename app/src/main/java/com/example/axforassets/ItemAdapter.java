@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private List<Item> itemList;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -22,12 +22,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         }
     }
 
-    public Adapter(List<Item> itemList) {
+    public ItemAdapter(List<Item> itemList) {
         this.itemList = itemList;
     }
 
     @Override
-    public Adapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
         return new ViewHolder(v);
     }

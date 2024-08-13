@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class ItemActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_item);
 
         RecyclerView recyclerView = findViewById(R.id.itemRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 new Item(R.drawable.fifth, "Fifth Item")
         );
 
-        Adapter adapter = new Adapter(itemList);
-        recyclerView.setAdapter(adapter);
+        ItemAdapter itemAdapter = new ItemAdapter(itemList);
+        recyclerView.setAdapter(itemAdapter);
     }
 }
