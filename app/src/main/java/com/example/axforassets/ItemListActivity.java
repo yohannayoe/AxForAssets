@@ -16,6 +16,7 @@ import android.view.View;
 
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 public class ItemListActivity extends AppCompatActivity {
 
@@ -29,6 +30,14 @@ public class ItemListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        ImageView menuButton = findViewById(R.id.menuButton);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MenuUtil.showMenu(ItemListActivity.this, v, "ItemList");
             }
         });
 

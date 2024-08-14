@@ -7,34 +7,28 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#FDF0D8"
-        android:elevation="20dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+
+        >
 
         <TextView
+            android:fontFamily="@font/gillsanscondensedbold"
             android:id="@+id/tvLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:paddingLeft="20dp"
             android:text="Hi, User!"
+            android:layout_gravity="center"
             android:textColor="#7D5A3A"
             android:textSize="20sp"
             android:textStyle="bold" />
-    </RelativeLayout>
-    <TextView
-        android:id="@+id/tvProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:layout_marginStart="16dp"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="#7D5A3A"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="10dp"/>
+        <include layout="@layout/menubutton"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,146 +42,162 @@
             android:background="@drawable/image_412503" />
     </LinearLayout>
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
 
-        <TextView
-            android:id="@+id/ivPencilEmail"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/ivPencilEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/gillsanscondensedbold"
+                android:text="Email "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#7D5A3A"
+                android:layout_marginBottom="5dp"/>
+
+
+        </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Email "
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/gillsanscondensedbold"
+            android:background="@drawable/edit_text_background_profile"
+            android:enabled="false"
+            android:hint="@string/gmail_com"
+            android:padding="8dp"
+            android:textColor="#7D5A3A" />
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/ivPencilJob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/gillsanscondensedbold"
+                android:text="Job "
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#7D5A3A"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/ivPencilJobImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivPencilJob"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/pencil_edit" />
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/etJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/gillsanscondensedbold"
+            android:background="@drawable/edit_text_background_profile"
             android:textColor="#7D5A3A"
-            android:layout_marginBottom="5dp"/>
+            android:padding="8dp"
+            android:hint="Your Job"
+            android:enabled="false"
+            />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/ivPencilAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Address "
+                android:fontFamily="@font/gillsanscondensedbold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#7D5A3A"
+                android:layout_marginBottom="5dp"/>
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/edit_text_background_profile"
-        android:enabled="false"
-        android:hint="@string/gmail_com"
-        android:padding="8dp"
-        android:textColor="#7D5A3A" />
+            <ImageView
+                android:id="@+id/ivPencilAddressImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivPencilAddress"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/pencil_edit" />
+        </RelativeLayout>
 
-
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp">
-
-        <TextView
-            android:id="@+id/ivPencilJob"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/etAddress"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Job "
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:background="@drawable/edit_text_background_profile"
             android:textColor="#7D5A3A"
-            android:layout_marginBottom="5dp"/>
+            android:padding="8dp"
+            android:hint="jl."
+            android:fontFamily="@font/gillsanscondensedbold"
+            android:enabled="false"/>
 
-        <ImageView
-            android:id="@+id/ivPencilJobImage"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/ivPencilJob"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/pencil_edit" />
-    </RelativeLayout>
-    <EditText
-        android:id="@+id/etJob"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/edit_text_background_profile"
-        android:textColor="#7D5A3A"
-        android:padding="8dp"
-        android:hint="Your Job"
-        android:enabled="false"
-        />
+            android:layout_marginTop="12dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp">
+            <TextView
+                android:id="@+id/ivPencilPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Phone "
+                android:fontFamily="@font/gillsanscondensedbold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#7D5A3A"
+                android:layout_marginBottom="5dp"/>
 
-        <TextView
-            android:id="@+id/ivPencilAddress"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/ivPencilPhoneImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivPencilPhone"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/pencil_edit" />
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Address "
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:background="@drawable/edit_text_background_profile"
             android:textColor="#7D5A3A"
-            android:layout_marginBottom="5dp"/>
-
-        <ImageView
-            android:id="@+id/ivPencilAddressImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/ivPencilAddress"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/pencil_edit" />
-    </RelativeLayout>
-
-    <EditText
-        android:id="@+id/etAddress"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/edit_text_background_profile"
-        android:textColor="#7D5A3A"
-        android:padding="8dp"
-        android:hint="jl."
-        android:enabled="false"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp">
-
-        <TextView
-            android:id="@+id/ivPencilPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Phone "
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#7D5A3A"
-            android:layout_marginBottom="5dp"/>
-
-        <ImageView
-            android:id="@+id/ivPencilPhoneImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/ivPencilPhone"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/pencil_edit" />
-    </RelativeLayout>
-    <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/edit_text_background_profile"
-        android:textColor="#7D5A3A"
-        android:padding="8dp"
-        android:hint="08..."
-        android:enabled="false"
-        />
+            android:padding="8dp"
+            android:hint="08..."
+            android:fontFamily="@font/gillsanscondensedbold"
+            android:enabled="false"
+            />
+    </LinearLayout>
 
 </LinearLayout>

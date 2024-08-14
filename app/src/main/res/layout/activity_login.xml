@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:text="Welcome to AXForAsset"
+            android:fontFamily="@font/gillsanscondensedbold"
             android:textColor="#8b4513"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -37,6 +38,7 @@
             android:layout_gravity="center"/>
 
         <TextView
+            android:fontFamily="@font/gillsanscondensedbold"
             android:id="@+id/textViewUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,6 +63,7 @@
                 android:adjustViewBounds="true" />
 
             <EditText
+                android:fontFamily="@font/gillsanscondensedbold"
                 android:id="@+id/usernameEditText"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
@@ -71,8 +74,7 @@
                 android:padding="10dp"
                 android:textColor="#936C46"
                 android:textColorHint="#936C46"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <View
@@ -83,6 +85,7 @@
 
 
         <TextView
+            android:fontFamily="@font/gillsanscondensedbold"
             android:id="@+id/textViewPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,6 +111,7 @@
 
 
             <EditText
+                android:fontFamily="@font/gillsanscondensedbold"
                 android:id="@+id/passwordEditText"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
@@ -116,11 +120,10 @@
                 android:background="@drawable/edit_text_background"
                 android:hint="Enter your password"
                 android:inputType="textPassword"
+                android:padding="10dp"
                 android:textColor="#8b4513"
                 android:textColorHint="#936C46"
-                android:padding="10dp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <View
@@ -134,6 +137,8 @@
             android:layout_gravity="center"
             android:background="@drawable/button_background"
             app:backgroundTint="@null"
+            android:fontFamily="@font/gillsanscondensedbold"
+            android:textAllCaps="false"
             android:text="Login"
             android:textSize="18sp"
             android:textColor="#ffffff"

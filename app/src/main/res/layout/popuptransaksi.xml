@@ -37,12 +37,14 @@
                 android:layout_height="match_parent"
                 android:textSize="20dp"
                 android:gravity="center"
+                android:fontFamily="@font/gillsanscondensedbold"
                 android:text="Transaction"/>
         </LinearLayout>
 <!--        email input-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/gillsanscondensedbold"
             android:text="Email"/>
         <EditText
             android:id="@+id/email"
@@ -57,6 +59,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/gillsanscondensedbold"
             android:text="Credit Card"/>
         <Spinner
             android:id="@+id/creditCard"
@@ -67,9 +70,11 @@
             />
         <Button
             android:id="@+id/submit"
+            android:fontFamily="@font/gillsanscondensedbold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit"
+            android:textAllCaps="false"
             app:backgroundTint="@null"
             android:background="@drawable/rounded_btn_krem"
             android:textColor="@color/white"

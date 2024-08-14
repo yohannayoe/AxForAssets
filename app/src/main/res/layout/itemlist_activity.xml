@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Back"
+            android:fontFamily="@font/gillsanscondensedbold"
             android:textColor="@color/back_selected"
             android:textSize="21sp"
             android:textStyle="bold" />

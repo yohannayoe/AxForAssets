@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MenuUtil {
 
-    public static void showMenu(Context context, View anchorView, Class<?> itemListActivityClass) {
+    public static void showMenu(Context context, View anchorView, String currentPage) {
         final PopupWindow[] popupWindow = {null};
         anchorView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,37 +25,44 @@ public class MenuUtil {
                     LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     View popupView = layoutInflater.inflate(R.layout.menupopup, null);
 
-                    // ItemPopup for item list
-                    TextView itemPopup = popupView.findViewById(R.id.ItemPopup);
-                    itemPopup.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(context, itemListActivityClass);
-                            context.startActivity(intent);
-                        }
-                    });
+                    // TextViews for menu items
+                    TextView firstPopupItem = popupView.findViewById(R.id.FirstPopupItem);
+                    TextView secondPopupItem = popupView.findViewById(R.id.SecondPopupItem);
+                    TextView thirdPopupItem = popupView.findViewById(R.id.ThirdPopupItem);
 
+                    // Set the text and click listeners of the TextViews based on the current page
+                    switch (currentPage) {
+                        case "Home":
+                            firstPopupItem.setText("Items");
+                            firstPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, ItemListActivity.class)));
 
-                    //For profile
-//                    TextView profilePopup = popupView.findViewById(R.id.ProfilePopup);
-//                    profilePopup.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Intent intent = new Intent(context, ProfileActivity.class);
-//                            context.startActivity(intent);
-//                        }
-//                    });
+                            secondPopupItem.setText("Profile");
+                            secondPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, ProfileActivity.class)));
 
-                    //For logout
-//                    TextView logoutPopup = popupView.findViewById(R.id.LogoutPopup);
-//                    logoutPopup.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Intent intent = new Intent(context, LoginActivity.class);
-//                            context.startActivity(intent);
-//                        }
-//                    });
+                            thirdPopupItem.setText("Logout");
+                            thirdPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, LoginActivity.class)));
+                            break;
+                        case "Profile":
+                            firstPopupItem.setText("Home");
+                            firstPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, HomeActivity.class)));
 
+                            secondPopupItem.setText("Items");
+                            secondPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, ItemListActivity.class)));
+
+                            thirdPopupItem.setText("Logout");
+                            thirdPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, LoginActivity.class)));
+                            break;
+                        case "ItemList":
+                            firstPopupItem.setText("Home");
+                            firstPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, HomeActivity.class)));
+
+                            secondPopupItem.setText("Profile");
+                            secondPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, ProfileActivity.class)));
+
+                            thirdPopupItem.setText("Logout");
+                            thirdPopupItem.setOnClickListener(v1 -> context.startActivity(new Intent(context, LoginActivity.class)));
+                            break;
+                    }
 
                     popupWindow[0] = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                     popupWindow[0].setOutsideTouchable(true);

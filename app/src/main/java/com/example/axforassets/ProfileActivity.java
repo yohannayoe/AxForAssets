@@ -28,13 +28,24 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
+        ImageView menuButton = findViewById(R.id.menuButton);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MenuUtil.showMenu(ProfileActivity.this, v, "Profile");
+            }
+        });
+
+        // Get the username from SharedPreferences
+        SharedPreferences loginPrefs = getSharedPreferences("Prefs", MODE_PRIVATE);
+        String username = loginPrefs.getString("username", "");
+
+        // Find the welcomeText TextView and set the username
         TextView tvLabel = findViewById(R.id.tvLabel);
         tvLabel.setText("Hi, " + username + "!");
+
         TextView etEmail = findViewById(R.id.etEmail);
         etEmail.setText(username + "@gmail.com");
-//        Log.d("ytes", "usrname: " + username);
 
         // Inisialisasi view
 //        edEmail = findViewById(R.id.etEmail);

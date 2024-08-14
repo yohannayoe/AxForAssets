@@ -10,36 +10,42 @@
         android:layout_height="150dp"
         android:src="@drawable/first" />
 
-    <TextView
-        android:id="@+id/itemName"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_gravity="end"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="50dp"
-        android:text="Item Name"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
+        >
 
-        />
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Item Name"
+            android:fontFamily="@font/gillsanscondensedbold"
+            android:textColor="@color/brown"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
 
 
-    <Button
-        android:id="@+id/btnSelect"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center|end"
-        android:layout_marginRight="55dp"
-        android:layout_marginBottom="10dp"
-        android:stateListAnimator="@animator/lift_on_touch"
-        android:background="@drawable/buttonpurchase"
-        android:text="Detail"
-        app:backgroundTint="@null"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        />
+        <Button
+            android:id="@+id/btnSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gillsanscondensedbold"
+            android:stateListAnimator="@animator/lift_on_touch"
+            android:background="@drawable/buttonpurchase"
+            android:text="Detail"
+            app:backgroundTint="@null"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
 
 </FrameLayout>

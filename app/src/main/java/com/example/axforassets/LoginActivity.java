@@ -1,6 +1,7 @@
 package com.example.axforassets;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,20 +36,22 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (password.length() < 8) {
                     Toast.makeText(LoginActivity.this, "Password length must be at least 8 characters", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (username.equals("admin") && password.equals("admin123")) {
-                        Intent intent = new Intent(LoginActivity.this, Success.class);
-                        intent.putExtra("username", username);
-                        startActivity(intent);
-                    } else {
-                        // Membuat Intent untuk berpindah ke ProfileActivity
-                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
 
-                        // Mengirimkan username ke ProfileActivity
-                        intent.putExtra("username", username);
+                    // Save username and password to SharedPreferences
+                    SharedPreferences prefs = getSharedPreferences("Prefs", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("username", username);
+                    editor.apply();
 
-                        // Memulai Activity
-                        startActivity(intent);
-                    }
+                    // Membuat Intent untuk berpindah ke ProfileActivity
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+
+                    // Mengirimkan username ke ProfileActivity
+                    intent.putExtra("username", username);
+
+                    // Memulai Activity
+                    startActivity(intent);
+
                 }
             }
         });
