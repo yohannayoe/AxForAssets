@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="24dp"
+                android:fontFamily="@font/gillsanscondensedbold"
+                android:text="Welcome, username" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_below="@id/welcomeText"
+                android:id="@+id/viewPager"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_alignParentTop="true"
+                android:clipToPadding="false"
+                android:padding="30dp"
+                android:overScrollMode="never"
+                android:layout_marginBottom="20dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/termconditionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="24dp"
+                android:fontFamily="@font/gillsanscondensedbold"
+                android:text="Product" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/productRecyclerView"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/productText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="24dp"
+                android:fontFamily="@font/gillsanscondensedbold"
+                android:text="Terms and Conditions" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:background="@drawable/round_back_white10_100"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:id="@+id/tabTerm"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:fontFamily="@font/gillsanscondensed"
+                    android:textStyle="bold"
+                    android:background="@drawable/round_back_white_100"
+                    android:text="Terms"/>
+
+                <TextView
+                    android:id="@+id/tabCondition"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:fontFamily="@font/gillsanscondensed"
+                    android:textStyle="bold"
+                    android:text="Conditions"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragmentContainer"
+            android:layout_marginTop="0dp"/>
+    </LinearLayout>
+
+</LinearLayout>
