@@ -1,0 +1,193 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9D68D"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FDF0D8"
+        android:elevation="20dp">
+
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="20dp"
+            android:text="Hi, User!"
+            android:textColor="#7D5A3A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tvProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:layout_marginStart="16dp"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#7D5A3A"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/user_display_image"
+            style="@style/Style.App.circleImageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/image_412503" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/ivPencilEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Email "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#7D5A3A"
+            android:layout_marginBottom="5dp"/>
+
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/edit_text_background_profile"
+        android:enabled="false"
+        android:hint="@string/gmail_com"
+        android:padding="8dp"
+        android:textColor="#7D5A3A" />
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/ivPencilJob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Job "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#7D5A3A"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/ivPencilJobImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivPencilJob"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/pencil_edit" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/etJob"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/edit_text_background_profile"
+        android:textColor="#7D5A3A"
+        android:padding="8dp"
+        android:hint="Your Job"
+        android:enabled="false"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/ivPencilAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Address "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#7D5A3A"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/ivPencilAddressImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivPencilAddress"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/pencil_edit" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/edit_text_background_profile"
+        android:textColor="#7D5A3A"
+        android:padding="8dp"
+        android:hint="jl."
+        android:enabled="false"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/ivPencilPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Phone "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#7D5A3A"
+            android:layout_marginBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/ivPencilPhoneImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivPencilPhone"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/pencil_edit" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/edit_text_background_profile"
+        android:textColor="#7D5A3A"
+        android:padding="8dp"
+        android:hint="08..."
+        android:enabled="false"
+        />
+
+</LinearLayout>
