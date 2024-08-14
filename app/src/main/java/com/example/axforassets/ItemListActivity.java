@@ -15,6 +15,7 @@ import android.view.View;
 
 
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 public class ItemListActivity extends AppCompatActivity {
 
@@ -22,6 +23,15 @@ public class ItemListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.itemlist_activity);
+
+        FrameLayout backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         RecyclerView recyclerView = findViewById(R.id.itemRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -60,12 +70,12 @@ public class ItemListActivity extends AppCompatActivity {
                 new Item(R.drawable.dove6, "Turtle 3")
         ));
         ArrayList<Item> fifthVariation = new ArrayList<>(Arrays.asList(
-                new Item(R.drawable.dino1, "Turtle 1"),
-                new Item(R.drawable.dino2, "Turtle 2"),
-                new Item(R.drawable.dino3, "Turtle 2"),
-                new Item(R.drawable.dino4, "Turtle 2"),
-                new Item(R.drawable.dino5, "Turtle 2"),
-                new Item(R.drawable.dino6, "Turtle 3")
+                new Item(R.drawable.dino1, "Dino"),
+                new Item(R.drawable.dino2, "Doni"),
+                new Item(R.drawable.dino3, "Dinu"),
+                new Item(R.drawable.dino4, "Duni"),
+                new Item(R.drawable.dino5, "DIDIT"),
+                new Item(R.drawable.dino6, "Rahmanudin")
         ));
 
         // Pass the ArrayList of variations to the Item constructor
@@ -80,6 +90,9 @@ public class ItemListActivity extends AppCompatActivity {
 
         ItemAdapter adapter = new ItemAdapter(itemList, this);
         recyclerView.setAdapter(adapter);
+
+
+
     }
 
 }

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -68,6 +69,14 @@ public class SelectedItemActivity extends AppCompatActivity {
         // Set adapter
         itemAdapter = new SelectedItemAdapter(itemVariations, this);
         rvItemList.setAdapter(itemAdapter);
+
+        FrameLayout backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button buyItemsButton = findViewById(R.id.BuyItems);
@@ -152,9 +161,5 @@ public class SelectedItemActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-
-
     }
-
-
 }
