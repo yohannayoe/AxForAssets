@@ -46,7 +46,10 @@
                     android:textColor="@color/back_selected"
                     android:textSize="21sp"
                     android:textStyle="bold" />
+
+                <include layout="@layout/menubutton"/>
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
