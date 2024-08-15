@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class SelectedItemActivity extends AppCompatActivity {
     private SelectedItemAdapter itemAdapter;
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,32 +81,30 @@ public class SelectedItemActivity extends AppCompatActivity {
         });
 
 
+
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button buyItemsButton = findViewById(R.id.BuyItems);
+        buyItemsButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Button is pressed
+                        buyItemsButton.setBackgroundResource(R.drawable.button_background);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        // Button is released
+                        buyItemsButton.setBackgroundResource(R.drawable.buttonpurchase);
+                        break;
+                }
+                return false; // Don't consume the event
+            }
+        });
+
         buyItemsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Bagian Tekan Popup
-//                ImageView menuButton = findViewById(R.id.menuButton);
-//                final PopupWindow[] popupWindow = {null};
-//                menuButton.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        if (popupWindow[0] != null && popupWindow[0].isShowing()) {
-//                            // If the PopupWindow is showing, dismiss it
-//                            popupWindow[0].dismiss();
-//                            popupWindow[0] = null;
-//                        } else {
-//                            // If the PopupWindow is not showing, show it
-//                            LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//                            View popupView = layoutInflater.inflate(R.layout.menupopup, null);
-//
-//                            popupWindow[0] = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//                            popupWindow[0].setOutsideTouchable(true);
-//                            popupWindow[0].setFocusable(true);
-//                            popupWindow[0].showAtLocation(v, Gravity.START, Gravity.END, -300);
-//                        }
-//                    }
-//                });
+//                buyItemsButton.setBackgroundColor(getResources().getColor(R.color.brown_corner));
+
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(SelectedItemActivity.this);
                 LayoutInflater inflater = getLayoutInflater();

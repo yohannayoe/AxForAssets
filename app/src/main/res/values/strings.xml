@@ -14,7 +14,7 @@
     <string-array name="credit_card_array">
         <item>Visa</item>
         <item>MasterCard</item>
-        <item>American Express</item>
+        <item>Credit Card</item>
         <!-- Add more items as needed -->
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->

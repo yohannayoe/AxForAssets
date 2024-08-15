@@ -47,36 +47,36 @@ public class ItemListActivity extends AppCompatActivity {
 
         // Create an ArrayList of Item objects for each item representing its variations
         ArrayList<Item> firstVariation = new ArrayList<>(Arrays.asList(
-                new Item(R.drawable.kur1, "Turtle 1"),
-                new Item(R.drawable.kur2, "Turtle 2"),
-                new Item(R.drawable.kur3, "Turtle 2"),
-                new Item(R.drawable.kur4, "Turtle 2"),
-                new Item(R.drawable.kur5, "Turtle 2"),
-                new Item(R.drawable.kur6, "Turtle 3")
+                new Item(R.drawable.kur1, "Kura 1"),
+                new Item(R.drawable.kur2, "Kura 2"),
+                new Item(R.drawable.kur3, "Kura 3"),
+                new Item(R.drawable.kur4, "Kura 4"),
+                new Item(R.drawable.kur5, "Kura 5"),
+                new Item(R.drawable.kur6, "Kura 6")
         ));
         ArrayList<Item> secondVariation = new ArrayList<>(Arrays.asList(
-                new Item(R.drawable.buaya1, "Richard 1"),
-                new Item(R.drawable.buaya2, "Louwis 1"),
-                new Item(R.drawable.buaya3, "Alex 1"),
-                new Item(R.drawable.buaya4, "Richard 2"),
-                new Item(R.drawable.buaya5, "Louwis 2"),
-                new Item(R.drawable.buaya6, "Alex 2")
+                new Item(R.drawable.buaya1, "Croco 1"),
+                new Item(R.drawable.buaya2, "Croco 2"),
+                new Item(R.drawable.buaya3, "Croco 3"),
+                new Item(R.drawable.buaya4, "Croco 4"),
+                new Item(R.drawable.buaya5, "Croco 5"),
+                new Item(R.drawable.buaya6, "Croco 6")
         ));
         ArrayList<Item> thirdVariation = new ArrayList<>(Arrays.asList(
-                new Item(R.drawable.tirec1, "Turtle 1"),
-                new Item(R.drawable.tirec2, "Turtle 2"),
-                new Item(R.drawable.tirec3, "Turtle 2"),
-                new Item(R.drawable.tirec4, "Turtle 2"),
-                new Item(R.drawable.tirec5, "Turtle 2"),
-                new Item(R.drawable.tirec6, "Turtle 3")
+                new Item(R.drawable.tirec1, "Trice 1"),
+                new Item(R.drawable.tirec2, "Trice 2"),
+                new Item(R.drawable.tirec3, "Trice 3"),
+                new Item(R.drawable.tirec4, "Trice 4"),
+                new Item(R.drawable.tirec5, "Trice 5"),
+                new Item(R.drawable.tirec6, "Trice 6")
         ));
         ArrayList<Item> fourthVariation = new ArrayList<>(Arrays.asList(
-                new Item(R.drawable.dove1, "Turtle 1"),
-                new Item(R.drawable.dove2, "Turtle 2"),
-                new Item(R.drawable.dove3, "Turtle 2"),
-                new Item(R.drawable.dove4, "Turtle 2"),
-                new Item(R.drawable.dove5, "Turtle 2"),
-                new Item(R.drawable.dove6, "Turtle 3")
+                new Item(R.drawable.dove1, "Pige 1"),
+                new Item(R.drawable.dove2, "Pige 2"),
+                new Item(R.drawable.dove3, "Pige 3"),
+                new Item(R.drawable.dove4, "Pige 4"),
+                new Item(R.drawable.dove5, "Pige 5"),
+                new Item(R.drawable.dove6, "Pige 6")
         ));
         ArrayList<Item> fifthVariation = new ArrayList<>(Arrays.asList(
                 new Item(R.drawable.dino1, "Dino"),

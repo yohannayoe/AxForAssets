@@ -2,6 +2,7 @@ package com.example.axforassets;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -40,8 +41,12 @@ public class HomeActivity extends AppCompatActivity {
 
 
         // Get the intent and the username from LoginActivity
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
+//        Intent intent = getIntent();
+//        String username = intent.getStringExtra("username");
+//        get the shared preferences
+        SharedPreferences loginPrefs = getSharedPreferences("Prefs", MODE_PRIVATE);
+        String username = loginPrefs.getString("username", "");
+
 
         // Find the welcomeText TextView and set the username
         TextView welcomeText = findViewById(R.id.welcomeText);
